@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
-import { ConversorService } from '../../services/conversor.service';
+import { ConversorService } from '../../services/conversor/conversor.service';
 
 @Component({
     selector: 'app-conversor',
     templateUrl: './conversor.component.html',
     styleUrls: ['./conversor.component.css']
 })
-export class ConversorComponent implements OnInit {
+export class ConversorComponent {
 
     public form = new FormGroup({
         binaryNumberInput: new FormControl(
@@ -26,9 +26,6 @@ export class ConversorComponent implements OnInit {
         private _conversorService: ConversorService
     ) { }
 
-    ngOnInit(): void {
-    }
-
     public get binaryNumberInput(): AbstractControl {
         return this.form.get('binaryNumberInput');
     }
@@ -37,16 +34,17 @@ export class ConversorComponent implements OnInit {
         return this.form.get('result');
     }
 
-    public digit(event: KeyboardEvent): void {
-        var inputValue = this.binaryNumberInput.value as string;
-        if (this._conversorService.isNotAValidDigit(event)) {
-            this._conversorService.showMessage('Você inseriu um digito não binário');
-            inputValue = inputValue.replace(inputValue[inputValue.length - 1], '');
-            this.binaryNumberInput.setValue(inputValue);
-        } else {
-            this.result.setValue(
-                this._conversorService.conversor(inputValue)
-            );
-        }
+    public digit(): void {
+        let inputValue = this.binaryNumberInput.value as string;
+        inputValue = this._conversorService.verifyIfIsValidDigit(inputValue);
+        this.binaryNumberInput.setValue(inputValue);
+        this.result.setValue(
+            this._conversorService.conversor(inputValue)
+        );
+    }
+
+    public clear(): void {
+        this.binaryNumberInput.setValue(null);
+        this.result.setValue(0);
     }
 }
