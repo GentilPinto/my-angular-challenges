@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ConversorService } from './conversor.service';
+import { NotificationService } from './notification.service';
 
-describe('ConversorService', () => {
-  let service: ConversorService;
+describe('NotificationService', () => {
+  let service: NotificationService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ConversorService);
+    service = TestBed.inject(NotificationService);
   });
 
   it('should be created', () => {
