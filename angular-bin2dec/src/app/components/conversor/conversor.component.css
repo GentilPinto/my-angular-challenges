@@ -28,4 +28,7 @@ mat-icon {
     .main-card form {
         width: 100%;
     }
+    mat-form-field {
+        width: 20em;
+    }
 }
