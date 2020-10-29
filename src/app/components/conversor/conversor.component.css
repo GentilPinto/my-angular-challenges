@@ -1,0 +1,31 @@
+.header .main-card {
+    width: 100vw;
+}
+
+.header {
+    height: 10vh;
+}
+
+.main-card {
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-card form {
+    display: flex;
+    flex-direction: column;
+    width: 50rem;
+}
+
+mat-icon {
+    cursor: pointer;
+}
+
+@media(max-width: 780px) {
+    .main-card form {
+        width: 100%;
+    }
+}
