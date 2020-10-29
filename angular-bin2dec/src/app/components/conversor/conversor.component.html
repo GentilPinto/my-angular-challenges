@@ -9,14 +9,14 @@
         <form [formGroup]="form">
             <mat-form-field appearance="outline">
                 <mat-label>Valor a ser convertido (Em binário)</mat-label>
-                <input (keyup)="digit($event)" formControlName="binaryNumberInput" name="binaryNumberInput" id="binaryNumberInput" type="text" aria-label="Binary Number" matInput>
-                <mat-icon matSuffix>
+                <input (keyup)="digit()" formControlName="binaryNumberInput" name="binaryNumberInput" id="binaryNumberInput" type="text" aria-label="Binary Number" autocomplete="off" matInput>
+                <mat-icon matSuffix (click)="clear()">
                     close
                 </mat-icon>
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Resultado</mat-label>
-                <input formControlName="result" name="result" id="result" type="text" readonly matInput>
+                <input formControlName="result" name="result" id="result" type="text" value="0" readonly matInput>
             </mat-form-field>
         </form>
     </mat-card-content>
