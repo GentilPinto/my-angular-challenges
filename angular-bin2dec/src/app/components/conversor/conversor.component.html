@@ -2,6 +2,9 @@
     <h1>
         Bin2Dec
     </h1>
+    <mat-icon color="" (click)="darkMode()" rounded>
+        {{ iconName }}
+    </mat-icon>
 </mat-toolbar>
 
 <mat-card class="mat-elevation-z3 main-card">
@@ -9,7 +12,7 @@
         <form>
             <mat-form-field appearance="outline">
                 <mat-label>Valor a ser convertido (Em binário)</mat-label>
-                <input #binaryNumberInput (input)="typeNumber()" type="text" autocomplete="off" matInput>
+                <input #binaryNumberInput (input)="typeNumber()" type="text" autocomplete="off" autofocus matInput>
                 <mat-icon matSuffix (click)="clear()">
                     close
                 </mat-icon>

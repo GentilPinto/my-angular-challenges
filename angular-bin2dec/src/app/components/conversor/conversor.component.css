@@ -4,6 +4,10 @@
 
 .header {
     height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 20px;
 }
 
 .main-card {
@@ -12,6 +16,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
+    color: var(--body-color);
 }
 
 .main-card form {
@@ -22,6 +28,10 @@
 
 mat-icon {
     cursor: pointer;
+}
+
+.ng-star-inserted {
+    color: var(--body-color);
 }
 
 @media(max-width: 780px) {
