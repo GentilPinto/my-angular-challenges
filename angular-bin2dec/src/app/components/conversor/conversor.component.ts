@@ -19,10 +19,22 @@ export class ConversorComponent {
     @ViewChild('result')
     result: ElementRef;
 
+    private _isdark = false;
+
     constructor(
         private _conversorService: ConversorService,
         private _notificationService: NotificationService
     ) { }
+
+    public darkMode(): void {
+        const html = document.querySelector('html');
+        html.classList.toggle('dark-mode');
+        this._isdark = !this._isdark;
+    }
+
+    public get iconName(): string {
+        return this._isdark === true ? 'toggle_on' : 'toggle_off';
+    }
 
     public typeNumber(): void {
         const inputValue = this.binaryNumberInput.nativeElement.value as string;
