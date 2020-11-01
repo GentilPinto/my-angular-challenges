@@ -1,6 +1,10 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
+import {
+    ViewChild,
+    Component,
+    ElementRef
+} from '@angular/core';
 import { ConversorService } from '../../services/conversor/conversor.service';
+import { NotificationService } from '../../services/notification/notification.service';
 
 @Component({
     selector: 'app-conversor',
@@ -9,42 +13,36 @@ import { ConversorService } from '../../services/conversor/conversor.service';
 })
 export class ConversorComponent {
 
-    public form = new FormGroup({
-        binaryNumberInput: new FormControl(
-            '',
-            [
-                // Validators.required,
-            ]
-        ),
-        result: new FormControl(
-            '',
-            []
-        )
-    });
+    @ViewChild('binaryNumberInput')
+    binaryNumberInput: ElementRef;
+
+    @ViewChild('result')
+    result: ElementRef;
 
     constructor(
-        private _conversorService: ConversorService
+        private _conversorService: ConversorService,
+        private _notificationService: NotificationService
     ) { }
 
-    public get binaryNumberInput(): AbstractControl {
-        return this.form.get('binaryNumberInput');
-    }
-
-    public get result(): AbstractControl {
-        return this.form.get('result');
-    }
-
-    public digit(): void {
-        let inputValue = this.binaryNumberInput.value as string;
-        inputValue = this._conversorService.verifyIfIsValidDigit(inputValue);
-        this.binaryNumberInput.setValue(inputValue);
-        this.result.setValue(
-            this._conversorService.conversor(inputValue)
+    public typeNumber(): void {
+        const inputValue = this.binaryNumberInput.nativeElement.value as string;
+        const validation = this._conversorService.DigitValidation(inputValue);
+        validation.subscribe(
+            (data: string) => {
+                this.binaryNumberInput.nativeElement.value = data;
+                const conversionResult = this._conversorService.conversor(data);
+                this.result.nativeElement.value = conversionResult;
+            },
+            (error: string) => {
+                this._notificationService
+                    .showMessage(error);
+                console.log('error : ' + error);
+            }
         );
     }
 
     public clear(): void {
-        this.binaryNumberInput.setValue(null);
-        this.result.setValue(0);
+        this.binaryNumberInput.nativeElement.value = null;
+        this.result.nativeElement.value = 0;
     }
 }
