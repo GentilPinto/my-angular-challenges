@@ -34,12 +34,25 @@
     outline: 0;
 }
 
+:root {
+    --body-bg: #f1f1f1;
+    --body-color: #000;
+}
+
+.dark-mode {
+    --body-bg: #212529 !important;
+    --body-color: #899095 !important;
+}
+
 html,
 body {
     height: 100vh;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    color: var(--body-color);
+    background-color: var(--body-bg);
     text-rendering: optimizelegibility;
     -webkit-font-smoothing: antialiased;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    transition: background-color 0.9s;
 }
 
 .msg-error {
