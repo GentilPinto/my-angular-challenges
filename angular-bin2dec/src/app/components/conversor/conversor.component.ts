@@ -19,16 +19,21 @@ export class ConversorComponent {
     @ViewChild('result')
     result: ElementRef;
 
-    private _isdark = false;
+    private _isdark = localStorage.getItem('theme') !== null;
 
     constructor(
         private _conversorService: ConversorService,
         private _notificationService: NotificationService
     ) { }
 
-    public darkMode(): void {
-        const html = document.querySelector('html');
-        html.classList.toggle('dark-mode');
+    public themeToggle(): void {
+        const body = document.querySelector('body');
+        body.classList.toggle('theme-dark');
+        if (!this._isdark) {
+            localStorage.setItem('theme', 'theme-dark');
+        } else {
+            localStorage.removeItem('theme');
+        }
         this._isdark = !this._isdark;
     }
 

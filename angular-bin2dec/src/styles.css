@@ -35,20 +35,25 @@
 }
 
 :root {
-    --body-bg: #f1f1f1;
-    --body-color: #000;
+    --dark-background-color: #243447;
+    --dark-text-color: #eeeeee;
 }
 
-.dark-mode {
-    --body-bg: #212529 !important;
-    --body-color: #899095 !important;
+body {
+    --background-color: #f1f1f1;
+    --text-color: #000000;
+}
+
+body.theme-dark {
+    --background-color: var(--dark-background-color);
+    --text-color: var(--dark-text-color);
 }
 
 html,
 body {
     height: 100vh;
-    color: var(--body-color);
-    background-color: var(--body-bg);
+    color: var(--text-color);
+    background-color: var(--background-color);
     text-rendering: optimizelegibility;
     -webkit-font-smoothing: antialiased;
     font-family: Roboto, "Helvetica Neue", sans-serif;

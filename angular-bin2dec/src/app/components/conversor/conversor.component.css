@@ -17,7 +17,7 @@
     justify-content: center;
     align-items: center;
     background-color: transparent;
-    color: var(--body-color);
+    color: var(--text-color);
 }
 
 .main-card form {
@@ -31,7 +31,7 @@ mat-icon {
 }
 
 .ng-star-inserted {
-    color: var(--body-color);
+    color: var(--text-color);
 }
 
 @media(max-width: 780px) {
