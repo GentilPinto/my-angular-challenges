@@ -33,7 +33,7 @@ export class ConversorComponent {
     }
 
     public get iconName(): string {
-        return this._isdark === true ? 'toggle_on' : 'toggle_off';
+        return this._isdark === true ? 'wb_sunny' : 'bedtime';
     }
 
     public typeNumber(): void {
