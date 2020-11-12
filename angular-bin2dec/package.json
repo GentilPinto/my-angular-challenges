@@ -1,10 +1,7 @@
 {
     "name": "bin2dec",
     "version": "0.0.0",
-    "engines": {
-        "node": "14.2.0",
-        "yarn": "1.22.5"
-    },
+
     "scripts": {
         "ng": "ng",
         "build": "ng build",
@@ -14,24 +11,23 @@
         "dev:ssr": "ng run bin2dec:serve-ssr",
         "serve:ssr": "node dist/bin2dec/server/main.js",
         "build:ssr": "ng build --prod --base-href='https://bintodec.herokuapp.com/' && ng run bin2dec:server:production",
-        "prerender": "ng run bin2dec:prerender",
-        "postinstall": "ng build --prod --base-href='https://bintodec.herokuapp.com/' && ng run bin2dec:server:production"
+        "prerender": "ng run bin2dec:prerender"
     },
     "private": true,
     "dependencies": {
-        "@angular/animations": "~10.2.1",
+        "@angular/animations": "~11.0.0",
         "@angular/cdk": "10.2.6",
-        "@angular/cli": "~10.2.0",
-        "@angular/common": "~10.2.1",
-        "@angular/compiler": "~10.2.1",
-        "@angular/compiler-cli": "~10.2.1",
-        "@angular/core": "~10.2.1",
-        "@angular/forms": "~10.2.1",
+        "@angular/cli": "~11.0.0",
+        "@angular/common": "~11.0.0",
+        "@angular/compiler": "~11.0.0",
+        "@angular/compiler-cli": "~11.0.0",
+        "@angular/core": "~11.0.0",
+        "@angular/forms": "~11.0.0",
         "@angular/material": "~10.2.6",
-        "@angular/platform-browser": "~10.2.1",
-        "@angular/platform-browser-dynamic": "~10.2.1",
-        "@angular/platform-server": "~10.2.1",
-        "@angular/router": "~10.2.1",
+        "@angular/platform-browser": "~11.0.0",
+        "@angular/platform-browser-dynamic": "~11.0.0",
+        "@angular/platform-server": "~11.0.0",
+        "@angular/router": "~11.0.0",
         "@nguniversal/express-engine": "^10.1.0",
         "express": "^4.17.1",
         "rxjs": "~6.6.3",
@@ -40,7 +36,7 @@
         "zone.js": "~0.10.2"
     },
     "devDependencies": {
-        "@angular-devkit/build-angular": "~0.1002.0",
+        "@angular-devkit/build-angular": "~0.1100.0",
         "@angular/language-service": "~10.2.1",
         "@nguniversal/builders": "^10.1.0",
         "@types/express": "^4.17.0",
@@ -50,7 +46,7 @@
         "codelyzer": "^5.1.2",
         "jasmine-core": "~3.5.0",
         "jasmine-spec-reporter": "~5.0.0",
-        "karma": "~5.0.0",
+        "karma": "~5.1.1",
         "karma-chrome-launcher": "~3.1.0",
         "karma-coverage-istanbul-reporter": "~3.0.2",
         "karma-jasmine": "~4.0.0",
