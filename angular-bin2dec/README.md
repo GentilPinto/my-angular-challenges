@@ -2,8 +2,6 @@
 
 Idea from [here](https://github.com/florinpop17/app-ideas)
 
-**Demo**: [heroku](https://bintodec.herokuapp.com/)
-
 **Tier:** 1-Beginner
 
 Binary is the number system all digital computers are based on.
@@ -32,3 +30,11 @@ constraints:
 ## Bonus features
 
 - [x] ~User can enter a variable number of binary digits~
+
+## Demo
+
+**Online**: [heroku](https://bintodec.herokuapp.com/)
+
+|[Bin2Dec - Desktop Web Browser](angular-bin2dec)|[Bin2Dec - Mobile Web Browser](angular-bin2dec)|
+|:-:|:-:|
+|![Bin2Dec - Desktop Web Browser](screenshots/btdc-web.gif)|![Bin2Dec - Mobile Web Browser](screenshots/btdc-mobile.gif)|
